@@ -22,7 +22,9 @@
 <!-- BEGIN_TF_DOCS -->
 ### Inputs
 
-No inputs.
+| Name | Description | Type | Required |
+|------|-------------|------|:--------:|
+| tfe_organization | Name of the Terraform Cloud Organization. | `string` | yes |
 
 ### Outputs
 
