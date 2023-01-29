@@ -6,10 +6,10 @@ terraform {
 
   # see https://developer.hashicorp.com/terraform/language/settings#specifying-provider-requirements
   required_providers {
-    # see https://registry.terraform.io/providers/hashicorp/aws/4.51.0/
+    # see https://registry.terraform.io/providers/hashicorp/aws/4.52.0/
     aws = {
       source  = "hashicorp/aws"
-      version = ">= 4.51.0, < 5.0.0"
+      version = ">= 4.52.0, < 5.0.0"
     }
 
     # see https://registry.terraform.io/providers/hashicorp/random/3.4.3/
