@@ -8,6 +8,10 @@
 * [Regional Terraform Cloud Workspace for AWS-specific Resources](#regional-terraform-cloud-workspace-for-aws-specific-resources)
   * [Table of Contents](#table-of-contents)
   * [Requirements](#requirements)
+  * [Usage](#usage)
+    * [Inputs](#inputs)
+    * [Outputs](#outputs)
+  * [Notes](#notes)
   * [Author Information](#author-information)
   * [License](#license)
 <!-- TOC -->
@@ -34,7 +38,13 @@
 | instance_ami | Exported Attributes for `aws_ami.main` data source. |
 | random_string_suffix | Exported Attributes for `random_string.suffix`. |
 | zone_specific_suffix | Zone-specific Suffix for Resources. |
-<!-- END_TF_DOCS -->## Author Information
+<!-- END_TF_DOCS -->
+
+## Notes
+
+* Terraform state may contain [sensitive data](https://developer.hashicorp.com/terraform/language/state/sensitive-data). This workspaces uses [Terraform Cloud](https://developer.hashicorp.com/terraform/cloud-docs) to safely store state, and encrypt the data at rest.
+
+## Author Information
 
 This module is maintained by the contributors listed on [GitHub](https://github.com/workloads/regional-aws-deployment/graphs/contributors).
 
