@@ -21,7 +21,7 @@
 * HashiCorp Cloud Platform (HCP) [Account](https://portal.cloud.hashicorp.com/sign-in).
 * Amazon Web Services (AWS) [Account](https://aws.amazon.com/account/)
 * Terraform Cloud [Account](https://app.terraform.io/session)
-* Terraform `1.4.0` or [newer](https://developer.hashicorp.com/terraform/downloads).
+* Terraform `1.5.0` or [newer](https://developer.hashicorp.com/terraform/downloads).
 
 ## Usage
 
