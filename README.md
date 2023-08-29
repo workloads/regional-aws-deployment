@@ -1,11 +1,11 @@
-# Regional Terraform Cloud Workspace for AWS-specific Resources
+# Regional AWS-specific Resources
 
-> This directory manages the lifecycle of (other) Terraform Cloud Workspace configurations for [@workloads](https://github.com/workloads).
+> This directory manages the lifecycle of regional, AWS-specific resources for [@workloads](https://github.com/workloads).
 
 ## Table of Contents
 
 <!-- TOC -->
-* [Regional Terraform Cloud Workspace for AWS-specific Resources](#regional-terraform-cloud-workspace-for-aws-specific-resources)
+* [Regional AWS-specific Resources](#regional-aws-specific-resources)
   * [Table of Contents](#table-of-contents)
   * [Requirements](#requirements)
   * [Usage](#usage)
