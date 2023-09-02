@@ -34,7 +34,7 @@ For more information, including detailed usage guidelines, see the [Terraform do
 
 | Name | Description | Type | Required |
 |------|-------------|------|:--------:|
-| tfe_organization | Name of the Terraform Cloud Organization. | `string` | yes |
+| tfe_organization | Name of Terraform Cloud Organization. | `string` | yes |
 
 ### Outputs
 

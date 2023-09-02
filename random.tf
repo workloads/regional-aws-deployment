@@ -12,7 +12,3 @@ resource "random_string" "suffix" {
   upper   = false
   special = false
 }
-
-locals {
-  zone_suffix = "-${random_string.suffix.result}"
-}
