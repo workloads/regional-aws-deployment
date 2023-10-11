@@ -15,28 +15,55 @@ data "aws_availability_zones" "main" {
   }
 }
 
-# TODO: replace with HCP Packer-managed resource
-# see https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/ami
-data "aws_ami" "main" {
-  most_recent = true
+# see https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document
+data "aws_iam_policy_document" "iam_role" {
+  statement {
+    effect = "Allow"
 
-  filter {
-    name = "virtualization-type"
+    principals {
+      type = "Service"
 
-    values = [
-      "hvm"
+      identifiers = [
+        "ec2.amazonaws.com"
+      ]
+    }
+
+    actions = [
+      "sts:AssumeRole"
     ]
   }
+}
 
-  filter {
-    name = "name"
+# see https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document
+data "aws_iam_policy_document" "iam_policy_client" {
+  statement {
+    effect = "Allow"
 
-    values = [
-      "ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*"
+    actions = [
+      # TODO: make this more strict
+      "ec2:*"
+    ]
+
+    resources = [
+      # TODO: make this more strict
+      "arn:aws:ec2:${var.aws_region}:*:instance/*",
     ]
   }
+}
 
-  owners = [
-    "679593333241" # Canonical
-  ]
+# see https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document
+data "aws_iam_policy_document" "iam_policy_server" {
+  statement {
+    effect = "Allow"
+
+    actions = [
+      # TODO: make this more strict
+      "ec2:*"
+    ]
+
+    resources = [
+      # TODO: make this more strict
+      "arn:aws:ec2:${var.aws_region}:*:instance/*",
+    ]
+  }
 }

@@ -1,9 +1,4 @@
-# see https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ec2_serial_console_access
-resource "aws_ec2_serial_console_access" "example" {
-  enabled = true
-}
-
-# TODO: rewrite to non-default VPC
+# TODO: rewrite to non-default VPC and move to `scaled-compute` module
 # see https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/default_security_group
 resource "aws_default_security_group" "default" {
   vpc_id = var.security_group_vpc_id
@@ -102,3 +97,24 @@ resource "aws_default_security_group" "default" {
     ]
   }
 }
+
+
+#locals {
+#  # `regional_name_client` and `regional_name_server` are processed
+#  # with the `replace` function and will have `%s` replaced by the AZ
+#  regional_name_client = "client-%s-${var.random_suffix}"
+#  regional_name_server = "server-%s-${var.random_suffix}"
+#}
+
+#variable "tfe_organization" {
+#  type        = string
+#  description = "Name of Terraform Cloud Organization."
+#}
+
+#${random_string.suffix.result}
+
+locals {
+  # assemble Policy Description from user-supplied argument, and TFC-supplied AWS Region
+  iam_policy_description = "${var.iam_policy_description} (for `${var.aws_region}`)."
+}
+
