@@ -1,11 +1,6 @@
-output "aws_ami" {
-  description = "Exported Attributes for `aws_ami.main` data source."
-  value       = module.basic.aws_ami
-}
-
 output "aws_autoscaling_group" {
   description = "Exported Attributes for `aws_autoscaling_group`."
-  value       = module.basic.aws_autoscaling_group
+  value       = module.basic
 }
 
 output "aws_availability_zones" {
@@ -18,24 +13,24 @@ output "aws_availability_zones_az" {
   value       = module.basic.aws_availability_zones_az
 }
 
-output "aws_iam_role" {
+output "aws_iam_roles" {
   description = "Exported Attributes for `aws_iam_role`."
-  value       = module.basic.aws_iam_role
+  value       = module.basic.aws_iam_roles
 }
 
-output "aws_iam_instance_profile" {
+output "aws_iam_instance_profiles" {
   description = "Exported Attributes for `aws_iam_instance_profile`."
-  value       = module.basic.aws_iam_instance_profile
+  value       = module.basic.aws_iam_instance_profiles
 }
 
-output "aws_iam_policy" {
-  description = "Exported Attributes for `aws_iam_policy`."
-  value       = module.basic.aws_iam_policy
+output "aws_iam_policies" {
+  description = "Exported Attributes for `aws_iam_polic`."
+  value       = module.basic.aws_iam_policies
 }
 
-output "aws_iam_role_policy_attachment" {
+output "aws_iam_role_policy_attachments" {
   description = "Exported Attributes for `aws_iam_role_policy_attachment`."
-  value       = module.basic.aws_iam_role_policy_attachment
+  value       = module.basic.aws_iam_role_policy_attachments
 }
 
 # see `extras.tf`
@@ -51,7 +46,7 @@ output "aws_launch_template" {
 
 output "aws_placement_group" {
   description = "Exported Attributes for `aws_placement_group`."
-  value       = module.basic.aws_placement_group
+  value       = module.basic.aws_placement_groups
 }
 
 output "random_string_suffix" {
