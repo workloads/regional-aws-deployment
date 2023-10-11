@@ -7,7 +7,7 @@ disable_update_check        = false
 enable_debug                = false
 enable_syslog               = false
 leave_on_interrupt          = false
-leave_on_terminate          = false
+leave_on_terminate          = true
 log_json                    = false
 log_level                   = "INFO"
 log_rotate_bytes            = 0
@@ -22,7 +22,6 @@ client {
   bridge_network_hairpin_mode = false
   bridge_network_name         = "nomad"
   bridge_network_subnet       = "172.26.64.0/20"
-  cgroup_parent               = "/nomad"
   cni_config_dir              = "/opt/cni/config"
   cni_path                    = "/opt/cni/bin"
   cpu_total_compute           = 0
