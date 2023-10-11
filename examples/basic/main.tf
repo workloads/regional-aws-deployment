@@ -4,7 +4,7 @@ locals {
   # see https://developer.hashicorp.com/terraform/language/functions/templatefile
   client_config_nomad = templatefile("${path.module}/templates/nomad-client-config.hcl", {
     datacenter = var.aws_region
-    join_tags  = "provider=aws tag_key=nomad:role tag_value=client addr_type=public_v4"
+    join_tags  = "provider=aws tag_key=nomad:role tag_value=server addr_type=public_v4"
     region     = "aws"
   })
 
