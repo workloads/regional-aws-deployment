@@ -14,7 +14,7 @@ module "scaled_compute" {
   autoscaling_group_max_size         = each.value.autoscaling_group_max_size
   autoscaling_group_min_size         = each.value.autoscaling_group_min_size
 
-  custom_prefix = each.key
+  custom_prefix = "${each.key}-${var.aws_region}"
   custom_suffix = random_string.suffix.result
 
   iam_instance_profile_arn = module.instance_profiles[each.key].aws_iam_instance_profile.arn
@@ -22,7 +22,8 @@ module "scaled_compute" {
   launch_template_block_device_mappings  = var.launch_template_block_device_mappings
   launch_template_instance_type          = var.launch_template_instance_type
   launch_template_key_name               = var.launch_template_key_name
-  launch_template_user_data              = var.launch_template_user_data
+  launch_template_tags_instance          = each.value.launch_template_tags_instance
+  launch_template_user_data              = each.value.launch_template_user_data
   launch_template_vpc_security_group_ids = var.launch_template_vpc_security_group_ids
 
   security_group_vpc_id = var.security_group_vpc_id

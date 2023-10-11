@@ -1,6 +1,10 @@
 output "aws_autoscaling_group" {
   description = "Exported Attributes for `aws_autoscaling_group`."
-  value       = module.scaled_compute.aws_autoscaling_group
+
+  # iterate over type-specific Auto Scaling Groups
+  value = {
+    for identifier, data in module.scaled_compute : identifier => module.scaled_compute[identifier].aws_autoscaling_group
+  }
 }
 
 output "aws_availability_zones" {
@@ -16,7 +20,7 @@ output "aws_availability_zones_az" {
 output "aws_iam_roles" {
   description = "Exported Attributes for `aws_iam_role`."
 
-  # iterate over type-specific IAM Role(s)
+  # iterate over type-specific IAM Roles
   value = {
     for identifier, data in module.instance_profiles : identifier => module.instance_profiles[identifier].aws_iam_role
   }

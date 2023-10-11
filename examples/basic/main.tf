@@ -1,3 +1,33 @@
+locals {
+  # assemble dynamic User Data and associated Nomad configuration files
+
+  # see https://developer.hashicorp.com/terraform/language/functions/templatefile
+  client_config_nomad = templatefile("${path.module}/templates/nomad-client-config.hcl", {
+    datacenter = var.aws_region
+    join_tags  = "provider=aws tag_key=nomad:role tag_value=client"
+    region     = "AWS"
+  })
+
+  # see https://developer.hashicorp.com/terraform/language/functions/base64encode
+  # and https://developer.hashicorp.com/terraform/language/functions/templatefile
+  client_user_data = base64encode(templatefile("${path.module}/templates/user-data.tftpl.sh", {
+    NOMAD_CONFIG_DATA = base64encode(local.client_config_nomad)
+  }))
+
+  # see https://developer.hashicorp.com/terraform/language/functions/templatefile
+  server_config_nomad = templatefile("${path.module}/templates/nomad-server-config.hcl", {
+    datacenter = var.aws_region
+    join_tags  = "provider=aws tag_key=nomad:role tag_value=server"
+    region     = "AWS"
+  })
+
+  # see https://developer.hashicorp.com/terraform/language/functions/base64encode
+  # and https://developer.hashicorp.com/terraform/language/functions/templatefile
+  server_user_data = base64encode(templatefile("${path.module}/templates/user-data.tftpl.sh", {
+    NOMAD_CONFIG_DATA = base64encode(local.server_config_nomad)
+  }))
+}
+
 module "basic" {
   source = "../.."
 
@@ -13,7 +43,10 @@ module "basic" {
 
   launch_template_key_name = aws_key_pair.main.key_name
 
-  launch_template_user_data = filebase64("${path.module}/templates/user-data.sh")
+  launch_template_user_data = {
+    client = local.client_user_data
+    server = local.server_user_data
+  }
 
   launch_template_vpc_security_group_ids = [
     data.aws_security_group.default.id

@@ -48,7 +48,7 @@ variable "launch_template_key_name" {
 }
 
 variable "launch_template_user_data" {
-  type        = string
+  type        = map(string)
   description = "User Data for Instances in Launch Template."
 }
 

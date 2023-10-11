@@ -16,6 +16,8 @@ locals {
         "nomad:role"    = "client"
         "service:nomad" = "true"
       }
+
+      launch_template_user_data = var.launch_template_user_data["client"]
     }
 
     # Nomad Server-specific configuration
@@ -34,6 +36,8 @@ locals {
         "nomad:role"    = "server"
         "service:nomad" = "true"
       }
+
+      launch_template_user_data = var.launch_template_user_data["server"]
     }
   }
 }
