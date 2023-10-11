@@ -34,12 +34,12 @@ HASHICORP_SOURCELIST="${BASE_SOURCELIST}/hashicorp.list"
 
 # get hostname from IMDS and then set hostname
 # see https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-retrieval.html
-IMDS_SERVER="http://169.254.169.254/latest"
-IMDS_TOKEN=$(curl --header "X-aws-ec2-metadata-token-ttl-seconds: 21600" --silent --request PUT "${IMDS_SERVER}/api/token")
-IMDS_TAG_HOSTNAME=$(curl --header "X-aws-ec2-metadata-token: ${IMDS_TOKEN}" --silent  --request GET "${IMDS_SERVER}/meta-data/tags/instance/Name")
+# IMDS_SERVER="http://169.254.169.254/latest"
+# IMDS_TOKEN=$(curl --header "X-aws-ec2-metadata-token-ttl-seconds: 21600" --silent --request PUT "${IMDS_SERVER}/api/token")
+# IMDS_TAG_HOSTNAME=$(curl --header "X-aws-ec2-metadata-token: ${IMDS_TOKEN}" --silent  --request GET "${IMDS_SERVER}/meta-data/tags/instance/Name")
 
 # see https://man7.org/linux/man-pages/man1/hostnamectl.1.html
-sudo hostnamectl hostname "${IMDS_TAG_HOSTNAME}"
+# sudo hostnamectl hostname "${IMDS_TAG_HOSTNAME}"
 
 # update packages
 sudo apt update
