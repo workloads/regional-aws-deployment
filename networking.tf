@@ -61,7 +61,7 @@ resource "aws_default_security_group" "default" {
 
   # Nomad RPC
   ingress {
-    description = "Nomad RPC"
+    description = "Nomad RPC (TCP)"
 
     cidr_blocks = [
       "0.0.0.0/0"
@@ -70,11 +70,38 @@ resource "aws_default_security_group" "default" {
     from_port = 4647
     to_port   = 4647
     protocol  = "tcp"
+    self      = true
+  }
+
+  ingress {
+    description = "Nomad RPC (UDP)"
+
+    cidr_blocks = [
+      "0.0.0.0/0"
+    ]
+
+    from_port = 4647
+    to_port   = 4647
+    protocol  = "udp"
+    self      = true
   }
 
   # Nomad Serf
   ingress {
-    description = "Nomad Serf"
+    description = "Nomad Serf (TCP)"
+
+    cidr_blocks = [
+      "0.0.0.0/0"
+    ]
+
+    from_port = 4648
+    to_port   = 4648
+    protocol  = "tcp"
+    self      = true
+  }
+
+  ingress {
+    description = "Nomad Serf (UDP)"
 
     cidr_blocks = [
       "0.0.0.0/0"
@@ -88,13 +115,16 @@ resource "aws_default_security_group" "default" {
 
   egress {
     description = "Unrestricted Egress"
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
 
     cidr_blocks = [
       "0.0.0.0/0"
     ]
+
+    from_port = 0
+    to_port   = 0
+    protocol  = "-1"
+
+    self = true
   }
 }
 

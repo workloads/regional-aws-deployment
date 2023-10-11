@@ -41,7 +41,8 @@ data "aws_iam_policy_document" "iam_policy_client" {
 
     actions = [
       "ec2:DescribeInstances",
-      "ec2:DescribeInstancesInput,"
+      "ec2:DescribeTags",
+      "autoscaling:DescribeAutoScalingGroups",
     ]
 
     resources = [
@@ -56,13 +57,14 @@ data "aws_iam_policy_document" "iam_policy_server" {
     effect = "Allow"
 
     actions = [
-      # TODO: make this more strict
-      "ec2:*"
+      "ec2:DescribeInstances",
+      "ec2:DescribeTags",
+      "autoscaling:DescribeAutoScalingGroups",
     ]
 
     resources = [
-      # TODO: make this more strict
-      "arn:aws:ec2:${var.aws_region}:*:instance/*",
+      "*",
     ]
   }
 }
+

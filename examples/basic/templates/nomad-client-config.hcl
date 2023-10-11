@@ -40,11 +40,16 @@ client {
   min_dynamic_port            = 20000
   no_host_uuid                = true
 
-  retry_join = [
-    "${join_tags}"
-  ]
+  server_join = {
+    retry_interval = "15s"
 
-  servers   = []
+    retry_join = [
+      "${join_tags}",
+    ]
+
+    retry_max = 9
+  }
+
   state_dir = "/opt/nomad/client"
 }
 # end of `client` section

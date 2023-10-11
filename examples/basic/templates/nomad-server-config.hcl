@@ -42,15 +42,20 @@ server {
   node_gc_threshold             = "24h"
   non_voting_server             = false
   num_schedulers                = 1
+  rejoin_after_leave            = true
+  root_key_gc_interval          = "10m"
+  root_key_gc_threshold         = "1h"
+  root_key_rotation_threshold   = "720h"
 
-  retry_join = [
-    "${join_tags}",
-  ]
+  server_join = {
+    retry_interval = "15s"
 
-  rejoin_after_leave          = false
-  root_key_gc_interval        = "10m"
-  root_key_gc_threshold       = "1h"
-  root_key_rotation_threshold = "720h"
+    retry_join = [
+      "${join_tags}",
+    ]
+
+    retry_max = 9
+  }
 }
 # end of `server` section
 
