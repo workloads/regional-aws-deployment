@@ -40,13 +40,12 @@ data "aws_iam_policy_document" "iam_policy_client" {
     effect = "Allow"
 
     actions = [
-      # TODO: make this more strict
-      "ec2:*"
+      "ec2:DescribeInstances",
+      "ec2:DescribeInstancesInput,"
     ]
 
     resources = [
-      # TODO: make this more strict
-      "arn:aws:ec2:${var.aws_region}:*:instance/*",
+      "*",
     ]
   }
 }

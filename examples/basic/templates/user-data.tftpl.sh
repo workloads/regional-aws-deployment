@@ -113,7 +113,8 @@ sudo apt install --yes $${HASHICORP_PACKAGES_INSTALL}
 # write Nomad config
 mkdir -p "$${NOMAD_BASE_DIR}"
 
-
+# Base64-decode Nomad configuration data and write to file
+echo "$${NOMAD_CONFIG_DATA}" | base64 --decode - > "$${NOMAD_CONFIG_DIR}/nomad.hcl"
 
 # start Nomad
 sudo service nomad start

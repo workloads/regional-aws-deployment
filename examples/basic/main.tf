@@ -5,7 +5,7 @@ locals {
   client_config_nomad = templatefile("${path.module}/templates/nomad-client-config.hcl", {
     datacenter = var.aws_region
     join_tags  = "provider=aws tag_key=nomad:role tag_value=client"
-    region     = "AWS"
+    region     = "aws"
   })
 
   # see https://developer.hashicorp.com/terraform/language/functions/base64encode
@@ -18,7 +18,7 @@ locals {
   server_config_nomad = templatefile("${path.module}/templates/nomad-server-config.hcl", {
     datacenter = var.aws_region
     join_tags  = "provider=aws tag_key=nomad:role tag_value=server"
-    region     = "AWS"
+    region     = "aws"
   })
 
   # see https://developer.hashicorp.com/terraform/language/functions/base64encode

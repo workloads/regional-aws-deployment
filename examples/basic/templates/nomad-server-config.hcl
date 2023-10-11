@@ -20,7 +20,7 @@ syslog_facility             = "LOCAL0"
 server {
   acl_token_gc_threshold        = "1h"
   batch_eval_gc_threshold       = "24h"
-  bootstrap_expect              = 1
+  bootstrap_expect              = 3
   csi_plugin_gc_threshold       = "1h"
   csi_volume_claim_gc_interval  = "5m"
   csi_volume_claim_gc_threshold = "1h"
@@ -51,10 +51,6 @@ server {
   root_key_gc_interval        = "10m"
   root_key_gc_threshold       = "1h"
   root_key_rotation_threshold = "720h"
-
-  start_join = [
-    "${join_tags}",
-  ]
 }
 # end of `server` section
 
