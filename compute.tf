@@ -4,7 +4,7 @@ module "scaled_compute" {
     for type, profile in local.deployments : type => profile
   }
 
-  source = "git@github.com:ksatirli/terraform-aws-scaled-compute.git?ref=adds-code"
+  source = "git::https://github.com/ksatirli/terraform-aws-scaled-compute.git?ref=adds-code"
 
   aws_region         = var.aws_region
   availability_zones = data.aws_availability_zones.main.names
