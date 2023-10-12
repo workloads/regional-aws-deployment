@@ -7,10 +7,6 @@ locals {
     join_tags = [
       # primary cluster
       "provider=aws region=${var.aws_region} tag_key=nomad:role tag_value=server addr_type=public_v4",
-
-      # alternate regions, for federation
-      "provider=aws region=us-east-1 tag_key=nomad:role tag_value=server addr_type=public_v4",
-      "provider=aws region=us-west-1 tag_key=nomad:role tag_value=server addr_type=public_v4",
     ]
 
     region = "aws"
@@ -31,8 +27,15 @@ locals {
       "provider=aws region=${var.aws_region} tag_key=nomad:role tag_value=server addr_type=public_v4",
 
       # alternate regions, for federation
-      "provider=aws region=us-east-1 tag_key=nomad:role tag_value=server addr_type=public_v4",
-      "provider=aws region=us-west-1 tag_key=nomad:role tag_value=server addr_type=public_v4",
+      # TODO: update discovery to be more programmatic
+      "provider=aws region=af-south-1 tag_key=nomad:role tag_value=server addr_type=publicv4",
+      "provider=aws region=ap-east-1 tag_key=nomad:role tag_value=server addr_type=publicv4",
+      "provider=aws region=ca-central-1 tag_key=nomad:role tag_value=server addr_type=publicv4",
+      "provider=aws region=eu-central-1 tag_key=nomad:role tag_value=server addr_type=publicv4",
+      "provider=aws region=me-south-1 tag_key=nomad:role tag_value=server addr_type=publicv4",
+      "provider=aws region=sa-east-1 tag_key=nomad:role tag_value=server addr_type=publicv4",
+      "provider=aws region=us-east-1 tag_key=nomad:role tag_value=server addr_type=publicv4",
+      "provider=aws region=us-west-2 tag_key=nomad:role tag_value=server addr_type=publicv4",
     ]
 
     region = "aws"
