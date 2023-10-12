@@ -56,6 +56,7 @@ output "aws_iam_role_policy_attachments" {
 output "aws_key_pair" {
   description = "Exported Attributes for `aws_key_pair`."
   value       = aws_key_pair.main
+  sensitive   = true
 }
 
 output "aws_launch_template" {
