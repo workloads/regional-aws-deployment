@@ -1,15 +1,12 @@
 # TODO: replace with HCP Packer-managed resource
 # see https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/ami
 data "aws_ami" "main" {
-  most_recent = true
+  include_deprecated = false
+  most_recent        = true
 
-  filter {
-    name = "virtualization-type"
-
-    values = [
-      "hvm"
-    ]
-  }
+  owners = [
+    "amazon"
+  ]
 
   filter {
     name = "name"
@@ -19,7 +16,11 @@ data "aws_ami" "main" {
     ]
   }
 
-  owners = [
-    "679593333241" # Canonical
-  ]
+  filter {
+    name = "virtualization-type"
+
+    values = [
+      "hvm"
+    ]
+  }
 }

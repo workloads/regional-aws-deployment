@@ -6,7 +6,6 @@ module "scaled_compute" {
 
   source = "./modules/terraform-aws-scaled-compute"
 
-  ami_id             = var.ami_id
   aws_region         = var.aws_region
   availability_zones = data.aws_availability_zones.main.names
 
@@ -20,6 +19,7 @@ module "scaled_compute" {
   iam_instance_profile_arn = module.instance_profiles[each.key].aws_iam_instance_profile.arn
 
   launch_template_block_device_mappings  = var.launch_template_block_device_mappings
+  launch_template_image_id               = var.launch_template_image_id
   launch_template_instance_type          = var.launch_template_instance_type
   launch_template_key_name               = var.launch_template_key_name
   launch_template_tags_instance          = each.value.launch_template_tags_instance

@@ -2,7 +2,7 @@ locals {
   deployments = {
     # Nomad Client-specific configuration
     client = {
-      autoscaling_group_desired_capacity = 2
+      autoscaling_group_desired_capacity = 3
       autoscaling_group_max_size         = 3
       autoscaling_group_min_size         = 1
 

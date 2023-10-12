@@ -1,4 +1,4 @@
-variable "ami_id" {
+variable "launch_template_image_id" {
   type        = string
   description = "AMI ID to use for Instances in the Auto Scaling Group."
 }
