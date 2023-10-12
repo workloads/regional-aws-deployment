@@ -33,12 +33,6 @@ output "aws_iam_role_policy_attachments" {
   value       = module.basic.aws_iam_role_policy_attachments
 }
 
-# see `extras.tf`
-output "aws_key_pair" {
-  description = "Exported Attributes for `aws_key_pair`."
-  value       = aws_key_pair.main
-}
-
 output "aws_launch_template" {
   description = "Exported Attributes for `aws_launch_template`."
   value       = module.basic.aws_launch_template

@@ -1,7 +1,7 @@
 # TODO: rewrite to non-default VPC and move to `scaled-compute` module
 # see https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/default_security_group
 resource "aws_default_security_group" "default" {
-  vpc_id = var.security_group_vpc_id
+  vpc_id = data.aws_vpc.default.id
 
   # SSH
   ingress {

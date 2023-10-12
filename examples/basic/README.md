@@ -11,7 +11,6 @@ This is a _basic_ example of the `regional-aws-deployment` module.
 | Name | Description | Type | Required |
 |------|-------------|------|:--------:|
 | aws_region | AWS Region. | `string` | no |
-| tfe_organization | Name of Terraform Cloud Organization. | `string` | no |
 
 ### Outputs
 
@@ -24,7 +23,6 @@ This is a _basic_ example of the `regional-aws-deployment` module.
 | aws_iam_policies | Exported Attributes for `aws_iam_polic`. |
 | aws_iam_role_policy_attachments | Exported Attributes for `aws_iam_role_policy_attachment`. |
 | aws_iam_roles | Exported Attributes for `aws_iam_role`. |
-| aws_key_pair | Exported Attributes for `aws_key_pair`. |
 | aws_launch_template | Exported Attributes for `aws_launch_template`. |
 | aws_placement_group | Exported Attributes for `aws_placement_group`. |
 | random_string_suffix | Exported Attributes for `random_string.suffix`. |

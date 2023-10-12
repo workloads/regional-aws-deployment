@@ -19,7 +19,7 @@ locals {
         "service:nomad" = "true"
       }
 
-      launch_template_user_data = var.launch_template_user_data["client"]
+      launch_template_user_data = local.client_user_data
     }
 
     # Nomad Server-specific configuration
@@ -41,7 +41,7 @@ locals {
         "service:nomad" = "true"
       }
 
-      launch_template_user_data = var.launch_template_user_data["server"]
+      launch_template_user_data = local.server_user_data
     }
   }
 }
