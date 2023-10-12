@@ -1,9 +1,4 @@
 terraform {
-  # see https://developer.hashicorp.com/terraform/language/settings/terraform-cloud
-  cloud {
-    # The Terraform Cloud configuration will be retrieved from the executing environment
-  }
-
   # see https://developer.hashicorp.com/terraform/language/settings#specifying-provider-requirements
   required_providers {
     # see https://registry.terraform.io/providers/hashicorp/aws/5.20.1/
