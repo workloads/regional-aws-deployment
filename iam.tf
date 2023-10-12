@@ -4,7 +4,7 @@ module "instance_profiles" {
     for type, profile in local.deployments : type => profile
   }
 
-  source = "./modules/terraform-aws-instance-profile"
+  source = "git@github.com:ksatirli/terraform-aws-instance-profile.git?ref=adds-code"
 
   iam_policy_document      = each.value.iam_policy_document
   iam_policy_description   = each.value.iam_policy_description
