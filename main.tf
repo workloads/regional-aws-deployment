@@ -82,7 +82,7 @@ locals {
         ebs_volume_size = 50 # size in GB
       }
 
-      launch_template_instance_type = "t3.medium"
+      launch_template_instance_type = var.launch_template_instance_type_client
 
       launch_template_tags_instance = {
         "nomad:role"    = "client"
@@ -110,7 +110,7 @@ locals {
         ebs_volume_size = 50 # size in GB
       }
 
-      launch_template_instance_type = "t3.medium"
+      launch_template_instance_type = var.launch_template_instance_type_server
 
       launch_template_tags_instance = {
         "nomad:role"    = "server"
