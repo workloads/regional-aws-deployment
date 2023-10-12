@@ -12,6 +12,8 @@ locals {
       iam_role_policy_document = data.aws_iam_policy_document.iam_role.json
       iam_role_name            = local.name_suffix
 
+      launch_template_instance_type = "t3.medium"
+
       launch_template_tags_instance = {
         "nomad:role"    = "client"
         "service:nomad" = "true"
@@ -31,6 +33,8 @@ locals {
       iam_policy_document      = data.aws_iam_policy_document.iam_policy_server.json
       iam_role_policy_document = data.aws_iam_policy_document.iam_role.json
       iam_role_name            = local.name_suffix
+
+      launch_template_instance_type = "t3.medium"
 
       launch_template_tags_instance = {
         "nomad:role"    = "server"
