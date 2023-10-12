@@ -37,7 +37,7 @@ variable "launch_template_instance_type" {
   type        = string
   description = "Type of EC2 Instance in Launch Template."
 
-  # not all EC2 Instance Types are avaialble in all Availability Zones
+  # not all EC2 Instance Types may be available in all Availability Zones
   # see https://instances.vantage.sh for more information
   default = "t3.small"
 }

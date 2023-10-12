@@ -20,7 +20,7 @@ module "scaled_compute" {
 
   launch_template_block_device_mappings  = var.launch_template_block_device_mappings
   launch_template_image_id               = var.launch_template_image_id
-  launch_template_instance_type          = var.launch_template_instance_type
+  launch_template_instance_type          = each.value.launch_template_instance_type
   launch_template_key_name               = var.launch_template_key_name
   launch_template_tags_instance          = each.value.launch_template_tags_instance
   launch_template_user_data              = each.value.launch_template_user_data
