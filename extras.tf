@@ -3,7 +3,7 @@
 
 # see https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/key_pair
 resource "aws_key_pair" "main" {
-  key_name_prefix = "${var.tfe_organization}-${var.aws_region}"
+  key_name_prefix = "${var.project_identifier}-${var.aws_region}"
 
   # load locally available public key
   public_key = file("~/.ssh/id_rsa.pub")

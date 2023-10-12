@@ -7,6 +7,7 @@ provider "aws" {
     tags = {
       "github:url"                   = "https://github.com/workloads/regional-aws-deployment"
       "terraform-cloud:organization" = var.tfe_organization
+      "terraform-cloud:workspace"    = var.tfe_workspace
     }
   }
 }
