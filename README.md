@@ -36,6 +36,7 @@ For more information, including detailed usage guidelines, see the [Terraform do
 |------|-------------|------|:--------:|
 | aws_region | AWS Region. | `string` | yes |
 | project_identifier | Human-readable Project Identifier. | `string` | yes |
+| ssh_public_key | Public part of SSH Key Pair. | `string` | yes |
 | tfe_organization | Name of Terraform Cloud Organization. | `string` | yes |
 | tfe_workspace | Name of Terraform Cloud Workspace. | `string` | yes |
 | iam_policy_description | Description of the IAM policy. | `string` | no |
@@ -52,6 +53,7 @@ For more information, including detailed usage guidelines, see the [Terraform do
 | aws_iam_policies | Exported Attributes for `aws_iam_policy`. |
 | aws_iam_role_policy_attachments | Exported Attributes for `aws_iam_role_policy_attachment`. |
 | aws_iam_roles | Exported Attributes for `aws_iam_role`. |
+| aws_key_pair | Exported Attributes for `aws_key_pair`. |
 | aws_launch_template | Exported Attributes for `aws_launch_template`. |
 | aws_placement_groups | Exported Attributes for `aws_placement_group`. |
 | random_string_suffix | Exported Attributes for `random_string.suffix`. |

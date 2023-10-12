@@ -53,6 +53,11 @@ output "aws_iam_role_policy_attachments" {
   }
 }
 
+output "aws_key_pair" {
+  description = "Exported Attributes for `aws_key_pair`."
+  value       = aws_key_pair.main
+}
+
 output "aws_launch_template" {
   description = "Exported Attributes for `aws_launch_template`."
 

@@ -1,3 +1,12 @@
+# see https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/key_pair
+resource "aws_key_pair" "main" {
+  key_name_prefix = "${var.project_identifier}-${var.aws_region}"
+
+  # load locally available public key
+  public_key = var.ssh_public_key
+}
+
+# see https://registry.terraform.io/modules/ksatirli/scaled-compute/aws/latest
 module "scaled_compute" {
   # see https://developer.hashicorp.com/terraform/language/meta-arguments/for_each
   for_each = {

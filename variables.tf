@@ -30,6 +30,11 @@ variable "project_identifier" {
   description = "Human-readable Project Identifier."
 }
 
+variable "ssh_public_key" {
+  type        = string
+  description = "Public part of SSH Key Pair."
+}
+
 variable "tfe_organization" {
   type        = string
   description = "Name of Terraform Cloud Organization."
