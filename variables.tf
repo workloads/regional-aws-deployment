@@ -22,7 +22,7 @@ variable "launch_template_instance_type_client" {
   # see https://instances.vantage.sh for more information on all Types
   # and https://developer.hashicorp.com/nomad/tutorials/enterprise/production-reference-architecture-vm-with-consul#nomad-servers
   # for guidance from HashiCorp on what types of EC2 Instances to use for Nomad Servers
-  default     = "t3.small"
+  default = "t3.small"
 }
 
 variable "launch_template_instance_type_server" {
@@ -33,7 +33,7 @@ variable "launch_template_instance_type_server" {
   # see https://instances.vantage.sh for more information on all Types
   # and https://developer.hashicorp.com/nomad/tutorials/enterprise/production-reference-architecture-vm-with-consul#nomad-servers
   # for guidance from HashiCorp on what types of EC2 Instances to use for Nomad Servers
-  default     = "t3.small"
+  default = "t3.small"
 }
 
 variable "project_identifier" {

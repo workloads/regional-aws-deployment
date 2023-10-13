@@ -14,6 +14,10 @@ locals {
     ]
 
     region = local.nomad_region
+      "provider=aws region=${var.aws_region} tag_key=nomad:role tag_value=server addr_type=public_v4",
+    ]
+
+    region = "aws"
   })
 
   # see https://developer.hashicorp.com/terraform/language/functions/base64encode
@@ -30,6 +34,8 @@ locals {
 
     join_tags = [
       "provider=aws region=${var.aws_region} tag_key=nomad:role tag_value=server addr_type=public_v4",
+
+      datacenter = var.aws_region
     ]
 
     region = "aws"
