@@ -1,16 +1,15 @@
 locals {
+  # TODO: populate this from var.management_region_aws (TFC Var Set)
+  authoritative_region = "aws-us-west-2"
+  nomad_region         = "aws-${var.aws_region}"
+
   # assemble dynamic User Data and associated Nomad configuration files
   # see https://developer.hashicorp.com/terraform/language/functions/templatefile
   client_config_nomad = templatefile("${path.module}/templates/nomad-client-config.tftpl.hcl", {
     datacenter = var.aws_region
 
     join_tags = [
-      # primary cluster
-      "provider=aws region=${var.aws_region} tag_key=nomad:role tag_value=server addr_type=public_v4",
-
-      # alternate regions, for federation
-      "provider=aws region=us-east-1 tag_key=nomad:role tag_value=server addr_type=public_v4",
-      "provider=aws region=us-west-1 tag_key=nomad:role tag_value=server addr_type=public_v4",
+      "provider=aws region=${local.nomad_region} tag_key=nomad:role tag_value=server addr_type=public_v4",
     ]
 
     region = "aws"
@@ -24,15 +23,12 @@ locals {
 
   # see https://developer.hashicorp.com/terraform/language/functions/templatefile
   server_config_nomad = templatefile("${path.module}/templates/nomad-server-config.tftpl.hcl", {
+    authoritative_region = local.authoritative_region
+
     datacenter = var.aws_region
 
     join_tags = [
-      # primary cluster
       "provider=aws region=${var.aws_region} tag_key=nomad:role tag_value=server addr_type=public_v4",
-
-      # alternate regions, for federation
-      "provider=aws region=us-east-1 tag_key=nomad:role tag_value=server addr_type=public_v4",
-      "provider=aws region=us-west-1 tag_key=nomad:role tag_value=server addr_type=public_v4",
     ]
 
     region = "aws"
@@ -65,7 +61,7 @@ locals {
         ebs_volume_size = 50 # size in GB
       }
 
-      launch_template_instance_type = "t3.medium"
+      launch_template_instance_type = var.launch_template_instance_type_client
 
       launch_template_tags_instance = {
         "nomad:role"    = "client"
@@ -93,7 +89,7 @@ locals {
         ebs_volume_size = 50 # size in GB
       }
 
-      launch_template_instance_type = "t3.medium"
+      launch_template_instance_type = var.launch_template_instance_type_server
 
       launch_template_tags_instance = {
         "nomad:role"    = "server"

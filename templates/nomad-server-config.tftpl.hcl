@@ -19,6 +19,7 @@ syslog_facility             = "LOCAL0"
 # see https://developer.hashicorp.com/nomad/docs/configuration/server
 server {
   acl_token_gc_threshold        = "1h"
+  authoritative_region          = "${authoritative_region}"
   batch_eval_gc_threshold       = "24h"
   bootstrap_expect              = 3
   csi_plugin_gc_threshold       = "1h"

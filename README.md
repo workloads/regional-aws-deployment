@@ -40,7 +40,8 @@ For more information, including detailed usage guidelines, see the [Terraform do
 | tfe_organization | Name of Terraform Cloud Organization. | `string` | yes |
 | tfe_workspace | Name of Terraform Cloud Workspace. | `string` | yes |
 | iam_policy_description | Description of the IAM policy. | `string` | no |
-| launch_template_instance_type | Type of EC2 Instance in Launch Template. | `string` | no |
+| launch_template_instance_type_client | Type of Instance to launch for Nomad Server Launch Template. | `string` | no |
+| launch_template_instance_type_server | Type of Instance to launch for Nomad Server Launch Template. | `string` | no |
 
 ### Outputs
 

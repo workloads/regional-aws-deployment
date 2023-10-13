@@ -14,9 +14,20 @@ variable "iam_policy_description" {
   default     = "Regional Compute Deployment"
 }
 
-variable "launch_template_instance_type" {
+variable "launch_template_instance_type_client" {
   type        = string
-  description = "Type of EC2 Instance in Launch Template."
+  description = "Type of Instance to launch for Nomad Server Launch Template."
+
+  # not all EC2 Instance Types may be available in all Availability Zones
+  # see https://instances.vantage.sh for more information on all Types
+  # and https://developer.hashicorp.com/nomad/tutorials/enterprise/production-reference-architecture-vm-with-consul#nomad-servers
+  # for guidance from HashiCorp on what types of EC2 Instances to use for Nomad Servers
+  default = "t3.small"
+}
+
+variable "launch_template_instance_type_server" {
+  type        = string
+  description = "Type of Instance to launch for Nomad Server Launch Template."
 
   # not all EC2 Instance Types may be available in all Availability Zones
   # see https://instances.vantage.sh for more information on all Types
