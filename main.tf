@@ -9,12 +9,7 @@ locals {
     datacenter = var.aws_region
 
     join_tags = [
-      # primary cluster
       "provider=aws region=${local.nomad_region} tag_key=nomad:role tag_value=server addr_type=public_v4",
-    ]
-
-    region = local.nomad_region
-      "provider=aws region=${var.aws_region} tag_key=nomad:role tag_value=server addr_type=public_v4",
     ]
 
     region = "aws"
@@ -34,8 +29,6 @@ locals {
 
     join_tags = [
       "provider=aws region=${var.aws_region} tag_key=nomad:role tag_value=server addr_type=public_v4",
-
-      datacenter = var.aws_region
     ]
 
     region = "aws"
