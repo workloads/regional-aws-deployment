@@ -28,7 +28,11 @@ locals {
     datacenter = "aws"
 
     join_tags = [
+      # discover Nomad Servers in the same AWS Region
       "provider=aws region=${var.aws_region} tag_key=nomad:role tag_value=server addr_type=public_v4",
+
+      # discover Nomad Servers in the authoritative AWS Region
+      "provider=aws region=${authoritative_region} tag_key=nomad:role tag_value=server addr_type=public_v4",
     ]
 
     region = local.nomad_region
