@@ -9,7 +9,7 @@ locals {
     datacenter = local.nomad_region
 
     join_tags = [
-      "provider=aws region=${local.nomad_region} tag_key=nomad:role tag_value=server addr_type=public_v4",
+      "provider=aws region=${var.aws_region} tag_key=nomad:role tag_value=server addr_type=public_v4",
     ]
 
     region = local.nomad_region
