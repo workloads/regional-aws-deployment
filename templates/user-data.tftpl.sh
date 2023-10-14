@@ -110,7 +110,12 @@ sudo apt update
 # install packages
 sudo apt install --yes $${HASHICORP_PACKAGES_INSTALL}
 
-# write Nomad config
+# safely create directory for Minecraft
+mkdir -p "/tmp/minecraft_data"
+mkdir -p "/tmp/minecraft_extras"
+mkdir -p "/tmp/minecraft_worlds"
+
+# safely create directory for Nomad config
 mkdir -p "$${NOMAD_BASE_DIR}"
 
 # Base64-decode Nomad configuration data and write to file

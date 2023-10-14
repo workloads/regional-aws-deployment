@@ -2,6 +2,7 @@ locals {
   # TODO: populate this from var.management_region_aws (TFC Var Set)
   management_region_aws = "us-west-2"
   authoritative_region = "aws-${local.management_region_aws}"
+  join_tag_tags        = "tag_key=nomad:role tag_value=server addr_type=public_v4"
   nomad_region         = "aws-${var.aws_region}"
 
   # assemble dynamic User Data and associated Nomad configuration files
@@ -10,7 +11,7 @@ locals {
     datacenter = "aws"
 
     join_tags = [
-      "provider=aws region=${var.aws_region} tag_key=nomad:role tag_value=server addr_type=public_v4",
+      "provider=aws region=${var.aws_region} ${local.join_tag_tags}",
     ]
 
     region = local.nomad_region
@@ -30,10 +31,10 @@ locals {
 
     join_tags = [
       # discover Nomad Servers in the same AWS Region
-      "provider=aws region=${var.aws_region} tag_key=nomad:role tag_value=server addr_type=public_v4",
+      "provider=aws region=${var.aws_region} ${local.join_tag_tags}",
 
       # discover Nomad Servers in the authoritative AWS Region
-      "provider=aws region=${local.management_region_aws} tag_key=nomad:role tag_value=server addr_type=public_v4",
+      "provider=aws region=${local.management_region_aws} ${local.join_tag_tags}",
     ]
 
     region = local.nomad_region

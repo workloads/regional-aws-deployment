@@ -48,6 +48,23 @@ client {
   }
 
   state_dir = "/opt/nomad/client"
+
+  # see https://developer.hashicorp.com/nomad/docs/configuration/client#host_volume
+  host_volume "minecraft_data" {
+    path      = "/tmp/minecraft_data"
+    read_only = false
+  }
+
+  # see https://developer.hashicorp.com/nomad/docs/configuration/client#host_volume
+  host_volume "minecraft_extras" {
+    path      = "/tmp/minecraft_extras"
+    read_only = false
+  }
+
+  host_volume "minecraft_worlds" {
+    path      = "/tmp/minecraft_worlds"
+    read_only = false
+  }
 }
 # end of `client` section
 
