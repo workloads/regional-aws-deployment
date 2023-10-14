@@ -6,7 +6,7 @@ locals {
   # assemble dynamic User Data and associated Nomad configuration files
   # see https://developer.hashicorp.com/terraform/language/functions/templatefile
   client_config_nomad = templatefile("${path.module}/templates/nomad-client-config.tftpl.hcl", {
-    datacenter = local.nomad_region
+    datacenter = "aws"
 
     join_tags = [
       "provider=aws region=${var.aws_region} tag_key=nomad:role tag_value=server addr_type=public_v4",
@@ -25,7 +25,7 @@ locals {
   server_config_nomad = templatefile("${path.module}/templates/nomad-server-config.tftpl.hcl", {
     authoritative_region = local.authoritative_region
 
-    datacenter = local.nomad_region
+    datacenter = "aws"
 
     join_tags = [
       "provider=aws region=${var.aws_region} tag_key=nomad:role tag_value=server addr_type=public_v4",
