@@ -5,4 +5,5 @@ terraform {
   }
 
   # see https://developer.hashicorp.com/terraform/language/settings#specifying-a-required-terraform-version
+  required_version = ">= 1.6.0"
 }
