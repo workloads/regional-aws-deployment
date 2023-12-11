@@ -1,9 +1,9 @@
 locals {
   # TODO: populate this from var.management_region_aws (TFC Var Set)
   management_region_aws = "us-west-2"
-  authoritative_region = "aws-${local.management_region_aws}"
-  join_tag_tags        = "tag_key=nomad:role tag_value=server addr_type=public_v4"
-  nomad_region         = "aws-${var.aws_region}"
+  authoritative_region  = "aws-${local.management_region_aws}"
+  join_tag_tags         = "tag_key=nomad:role tag_value=server addr_type=public_v4"
+  nomad_region          = "aws-${var.aws_region}"
 
   # assemble dynamic User Data and associated Nomad configuration files
   # see https://developer.hashicorp.com/terraform/language/functions/templatefile

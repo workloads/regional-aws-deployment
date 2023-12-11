@@ -128,21 +128,6 @@ resource "aws_default_security_group" "default" {
   }
 }
 
-
-#locals {
-#  # `regional_name_client` and `regional_name_server` are processed
-#  # with the `replace` function and will have `%s` replaced by the AZ
-#  regional_name_client = "client-%s-${var.random_suffix}"
-#  regional_name_server = "server-%s-${var.random_suffix}"
-#}
-
-#variable "tfe_organization" {
-#  type        = string
-#  description = "Name of Terraform Cloud Organization."
-#}
-
-#${random_string.suffix.result}
-
 locals {
   # assemble Policy Description from user-supplied argument, and TFC-supplied AWS Region
   iam_policy_description = "${var.iam_policy_description} (for `${var.aws_region}`)."
