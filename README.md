@@ -1,6 +1,6 @@
 # Regional AWS-specific Resources
 
-> This directory manages the lifecycle of regional, AWS-specific resources for [@workloads](https://github.com/workloads).
+> This repository manages regional, AWS-specific resources for [@workloads](https://github.com/workloads).
 
 ## Table of Contents
 
@@ -8,6 +8,7 @@
 * [Regional AWS-specific Resources](#regional-aws-specific-resources)
   * [Table of Contents](#table-of-contents)
   * [Requirements](#requirements)
+    * [Development](#development)
   * [Usage](#usage)
     * [Inputs](#inputs)
     * [Outputs](#outputs)
@@ -18,10 +19,16 @@
 
 ## Requirements
 
-* HashiCorp Cloud Platform (HCP) [Account](https://portal.cloud.hashicorp.com/sign-in).
-* Amazon Web Services (AWS) [Account](https://aws.amazon.com/account/)
-* Terraform Cloud [Account](https://app.terraform.io/session)
-* Terraform `1.5.0` or [newer](https://developer.hashicorp.com/terraform/downloads).
+- Amazon Web Services (AWS) [Account](https://aws.amazon.com/account/)
+- HashiCorp Cloud Platform (HCP) [Account](https://portal.cloud.hashicorp.com/sign-in).
+* HashiCorp Terraform Cloud [Account](https://app.terraform.io/session)
+- HashiCorp Terraform `1.6.x` or [newer](https://developer.hashicorp.com/terraform/downloads)
+
+### Development
+
+For development and testing of this repository:
+
+- `terraform-docs` `0.17.0` or [newer](https://terraform-docs.io/user-guide/installation/)
 
 ## Usage
 
