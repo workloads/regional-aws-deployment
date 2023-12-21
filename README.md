@@ -13,6 +13,7 @@
     * [Inputs](#inputs)
     * [Outputs](#outputs)
   * [Notes](#notes)
+    * [Sensitive Data](#sensitive-data)
   * [Contributors](#contributors)
   * [License](#license)
 <!-- TOC -->
@@ -69,7 +70,9 @@ For more information, including detailed usage guidelines, see the [Terraform do
 
 ## Notes
 
-- Terraform state may contain [sensitive data](https://developer.hashicorp.com/terraform/language/state/sensitive-data). This workspace uses [Terraform Cloud](https://developer.hashicorp.com/terraform/cloud-docs) to safely store state, and encrypt the data at rest.
+### Sensitive Data
+
+Terraform state may contain [sensitive data](https://developer.hashicorp.com/terraform/language/state/sensitive-data). This workspace uses [Terraform Cloud](https://developer.hashicorp.com/terraform/cloud-docs) to safely store state, and encrypt the data at rest.
 
 ## Contributors
 
