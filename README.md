@@ -13,7 +13,7 @@
     * [Inputs](#inputs)
     * [Outputs](#outputs)
   * [Notes](#notes)
-  * [Author Information](#author-information)
+  * [Contributors](#contributors)
   * [License](#license)
 <!-- TOC -->
 
@@ -69,18 +69,16 @@ For more information, including detailed usage guidelines, see the [Terraform do
 
 ## Notes
 
-* Terraform state may contain [sensitive data](https://developer.hashicorp.com/terraform/language/state/sensitive-data). This workspace uses [Terraform Cloud](https://developer.hashicorp.com/terraform/cloud-docs) to safely store state, and encrypt the data at rest.
+- Terraform state may contain [sensitive data](https://developer.hashicorp.com/terraform/language/state/sensitive-data). This workspace uses [Terraform Cloud](https://developer.hashicorp.com/terraform/cloud-docs) to safely store state, and encrypt the data at rest.
 
-## Author Information
+## Contributors
 
-This repository is maintained by the contributors listed on [GitHub](https://github.com/workloads/regional-aws-deployment/graphs/contributors).
+For a list of current (and past) contributors to this repository, see [GitHub](https://github.com/workloads/regional-aws-deployment/graphs/contributors).
 
 ## License
 
 Licensed under the Apache License, Version 2.0 (the "License").
 
-You may obtain a copy of the License at [apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0).
-
-Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an _"AS IS"_ basis, without WARRANTIES or conditions of any kind, either express or implied.
+You may download a copy of the License at [apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0).
 
 See the License for the specific language governing permissions and limitations under the License.
