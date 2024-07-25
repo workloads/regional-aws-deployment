@@ -48,10 +48,10 @@ variable "ssh_public_key" {
 
 variable "tfe_organization" {
   type        = string
-  description = "Name of Terraform Cloud Organization."
+  description = "Name of HCP Terraform Organization."
 }
 
 variable "tfe_workspace" {
-  description = "Name of Terraform Cloud Workspace."
+  description = "Name of HCP Terraform Workspace."
   type        = string
 }
