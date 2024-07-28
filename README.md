@@ -22,7 +22,7 @@
 
 - Amazon Web Services (AWS) [Account](https://aws.amazon.com/account/)
 - HashiCorp Cloud Platform (HCP) [Account](https://portal.cloud.hashicorp.com/sign-in).
-* HashiCorp Terraform Cloud [Account](https://app.terraform.io/session)
+* HCP Terraform [Account](https://app.terraform.io/session)
 - HashiCorp Terraform `1.9.x` or [newer](https://developer.hashicorp.com/terraform/downloads)
 
 ### Development
@@ -72,7 +72,7 @@ For more information, including detailed usage guidelines, see the [Terraform do
 
 ### Sensitive Data
 
-Terraform state may contain [sensitive data](https://developer.hashicorp.com/terraform/language/state/sensitive-data). This workspace uses [Terraform Cloud](https://developer.hashicorp.com/terraform/cloud-docs) to safely store state, and encrypt the data at rest.
+Terraform state may contain [sensitive data](https://developer.hashicorp.com/terraform/language/state/sensitive-data). This workspace uses [HCP Terraform](https://developer.hashicorp.com/terraform/cloud-docs) to safely store state, and encrypt the data at rest.
 
 ## Contributors
 
