@@ -81,3 +81,8 @@ output "random_string_suffix" {
   description = "Exported Attributes for `random_string.suffix`."
   value       = random_string.suffix
 }
+
+output "tfe_workspace_terraform_version" {
+  description = "Terraform version identifier of current HCP Terraform Workspace."
+  value       = data.tfe_workspace.main.terraform_version
+}
