@@ -22,7 +22,7 @@
 
 - Amazon Web Services (AWS) [Account](https://aws.amazon.com/account/)
 - HashiCorp Cloud Platform (HCP) [Account](https://portal.cloud.hashicorp.com/sign-in).
-* HCP Terraform [Account](https://app.terraform.io/session)
+- HCP Terraform [Account](https://app.terraform.io/session)
 - HashiCorp Terraform `1.9.x` or [newer](https://developer.hashicorp.com/terraform/downloads)
 
 ### Development
