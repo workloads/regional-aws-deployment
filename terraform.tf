@@ -6,22 +6,22 @@ terraform {
 
   # see https://developer.hashicorp.com/terraform/language/settings#specifying-provider-requirements
   required_providers {
-    # see https://registry.terraform.io/providers/hashicorp/aws/5.60.0/
+    # see https://registry.terraform.io/providers/hashicorp/aws/5.64.0/
     aws = {
       source  = "hashicorp/aws"
-      version = ">= 5.60.0, < 6.0.0"
+      version = ">= 5.64.0, < 6.0.0"
     }
 
-    # see https://registry.terraform.io/providers/hashicorp/random/3.6.0/
+    # see https://registry.terraform.io/providers/hashicorp/random/3.6.2/
     random = {
       source  = "hashicorp/random"
-      version = ">= 3.6.0, < 4.0.0"
+      version = ">= 3.6.2, < 4.0.0"
     }
 
-    # see https://registry.terraform.io/providers/hashicorp/tfe/0.57.0
+    # see https://registry.terraform.io/providers/hashicorp/tfe/0.58.0
     tfe = {
       source  = "hashicorp/tfe"
-      version = ">= 0.57.0, < 1.0.0"
+      version = ">= 0.58.0, < 1.0.0"
     }
   }
 
